@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project involves creating a 5-item NFT collection using DALLE 2 or Midjourney, storing the items on IPFS using pinata.cloud, and deploying an ERC721 or ERC1155 contract to the Goerli Ethereum Testnet. The project includes additional functionalities like mapping the NFT collection using the Polygon network token mapper and batch minting and transferring NFTs using Hardhat scripts.
+This project involves creating a 5-item NFT collection using DALLE 2 or Midjourney, storing the items on IPFS using pinata.cloud, and deploying an ERC721 or ERC1155 contract to the sepolia Ethereum Testnet. The project includes additional functionalities like mapping the NFT collection using the Polygon network token mapper and batch minting and transferring NFTs using Hardhat scripts.
 
 ## Tools Used
 
@@ -20,7 +20,7 @@ To successfully complete the Final Challenge, your project should meet the follo
 - Store these items on IPFS using pinata.cloud.
 
 ### 2. Deploy an ERC721 or ERC1155 Contract
-- Deploy your NFT contract to the Goerli Ethereum Testnet.
+- Deploy your NFT contract to the sepolia Ethereum Testnet.
 - Implement a `promptDescription` function in the contract that returns the prompt used to generate the images.
 
 ### 3. Map Your NFT Collection
@@ -30,7 +30,7 @@ To successfully complete the Final Challenge, your project should meet the follo
 - Write a Hardhat script to batch mint all NFTs. Using the ERC721A standard is optimal for this step.
 
 ### 5. Batch Transfer NFTs
-- Write a Hardhat script to batch transfer all NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge.
+- Write a Hardhat script to batch transfer all NFTs from Ethereum to Polygon amoy using the FxPortal Bridge.
   - Approve the NFTs to be transferred.
   - Deposit the NFTs to the Bridge.
 
@@ -51,7 +51,7 @@ To successfully complete the Final Challenge, your project should meet the follo
    Create a `.env` file in the root directory and add the necessary environment variables:
    ```env
    INFURA_PROJECT_ID=<your-infura-project-id>
-   GOERLI_PRIVATE_KEY=<your-goerli-private-key>
+   sepolia_PRIVATE_KEY=<your-sepolia-private-key>
    PINATA_API_KEY=<your-pinata-api-key>
    PINATA_API_SECRET=<your-pinata-api-secret>
    ```
@@ -63,34 +63,34 @@ To successfully complete the Final Challenge, your project should meet the follo
 
 5. **Deploy Contracts**
    ```bash
-   npx hardhat run scripts/deploy.js --network goerli
+   npx hardhat run scripts/deploy.js --network sepolia
    ```
 
 6. **Mint NFTs**
    ```bash
-   npx hardhat run scripts/mint.js --network goerli
+   npx hardhat run scripts/mint.js --network sepolia
    ```
 
-7. **Transfer NFTs to Polygon Mumbai**
+7. **Transfer NFTs to Polygon amoy**
    ```bash
-   npx hardhat run scripts/approveAndTransfer.js --network goerli
+   npx hardhat run scripts/approveAndTransfer.js --network sepolia
    ```
 
 ## Scripts
 
 ### Deploy Script (`scripts/deploy.js`)
-This script deploys the ERC721 or ERC1155 contract to the Goerli Ethereum Testnet.
+This script deploys the ERC721 or ERC1155 contract to the sepolia Ethereum Testnet.
 
 ### Mint Script (`scripts/mint.js`)
 This script batch mints all NFTs using the ERC721A standard.
 
 ### Approve and Transfer Script (`scripts/approveAndTransfer.js`)
-This script approves and transfers all NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge.
+This script approves and transfers all NFTs from Ethereum to Polygon amoy using the FxPortal Bridge.
 
 ## Contract Details
 
 - **Contract Name**: Your contract name here
-- **Network**: Goerli Ethereum Testnet
+- **Network**: sepolia Ethereum Testnet
 - **Standard**: ERC721 or ERC1155
 
 ## promptDescription Function
@@ -105,7 +105,7 @@ function promptDescription(uint256 tokenId) public view returns (string memory) 
 
 ## Notes
 
-- Ensure you have sufficient testnet ETH in your Goerli wallet for deployment and transactions.
+- Ensure you have sufficient testnet ETH in your sepolia wallet for deployment and transactions.
 - Use the Polygon token mapper to visualize your NFT collection on the Polygon network.
 - Refer to the Hardhat and Foundry documentation for additional support and troubleshooting.
 
